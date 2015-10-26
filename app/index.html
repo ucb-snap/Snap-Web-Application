@@ -44,15 +44,336 @@
 </head>
 
 <!-- ng-app="myApp" defines the application scope -->
-<body ng-app="myApp" ng-controller="MainController">
+<!-- only put things that are the same for every page in the file -->
+<body bgcolor="#fbfbfb" ng-app="myApp" ng-controller="MainController">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <h1> {{ title }} </h1>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="snap-header mdl-layout__header mdl-layout__header--waterfall">
+      <div class="mdl-layout__header-row snap-layout-header-row">
+          <span class="snap-title mdl-layout-title">
+            <a href="index.html"><img class="snap-logo-image" src="images/snap-logo.png"></a>
+            <div class="snap-navigation-container">
+              <nav class="snap-navigation mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About Us</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Community</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://snap.berkeley.edu/run">Run</a>
 
+                <div class="snap-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+                  <label class="mdl-button mdl-js-button mdl-button--icon snap-search-icon-size" for="search-field">
+                    <i class="material-icons">search</i>
+                  </label>
+                  <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search-field" />
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </span>
+        <!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="mdl-layout-spacer"></div>
+        <a id="sign-in" class="mdl-button snap-button snap-button--filled" href="#">Sign in</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="sign-in-form" class="snap-sign-in">
+    <div class="snap-sign-in-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <div class="title-part">
+          <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">account_circle</i>
+        </div>
+        <div class="title-part">
+          <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Sign In</h2>
+        </div>
+      </div>
+      <div class="mdl-card__supporting-text" style="padding-top:10px; padding-bottom:25px">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+            <input class="mdl-textfield__input" type="text" id="email"/>
+            <label class="mdl-textfield__label" for="sample3">Email</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password"/>
+            <label class="mdl-textfield__label" for="sample3">Password</label>
+          </div>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+            <span class="mdl-checkbox__label" style="font-size:12px">Remember me</span>
+          </label>
+        </form>
+      </div>
+      <div class="mdl-card__actions mdl-card--border" style="padding:16px">
+        <div class="action-part" style="padding-bottom:25px">
+          <a href="#" id="forgot-password" class="snap-sign-in-link" style="padding-right:10px">Forgot password?</a>
+          <a href="#" id="sign-up" class="snap-sign-in-link" style="padding-left:10px">Create Account</a>
+        </div>
+        <div class="action-part">
+          <a href="#" id="sign-in-button" class="mdl-button snap-button snap-button--filled">
+            Sign in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sign-up-form" class="snap-sign-up">
+    <div class="snap-sign-up-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <div class="title-part">
+          <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">account_circle</i>
+        </div>
+        <div class="title-part">
+          <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Create Account</h2>
+        </div>
+      </div>
+      <div class="mdl-card__supporting-text" style="padding-top:10px; padding-bottom:25px">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+            <input class="mdl-textfield__input" type="text" id="email"/>
+            <label class="mdl-textfield__label" for="sample3">Username</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password"/>
+            <label class="mdl-textfield__label" for="sample3">Email</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password"/>
+            <label class="mdl-textfield__label" for="sample3">Password</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password"/>
+            <label class="mdl-textfield__label" for="sample3">Confirm Password</label>
+          </div>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" />
+            <span class="mdl-checkbox__label" style="font-size:12px">Remember me</span>
+          </label>
+        </form>
+      </div>
+      <div class="mdl-card__actions mdl-card--border" style="padding:16px">
+        <div class="action-part">
+          <a href="#" id="create-account-button" class="mdl-button snap-button snap-button--filled">
+            Create Account
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="forgot-password-form" class="snap-forgot-password">
+    <div class="snap-forgot-password-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <div class="title-part">
+          <i class="material-icons" style="font-size: 5rem; padding-top: 20px; color: #3a3d3f">lock</i>
+        </div>
+        <div class="title-part">
+          <h2 class="mdl-card__title-text" style="display: block; color: #3a3d3f">Recover Password</h2>
+        </div>
+      </div>
+      <div class="mdl-card__supporting-text" style="padding-top:15px; padding-bottom:25px">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 15px">
+            <input class="mdl-textfield__input" type="username" id="username"/>
+            <label class="mdl-textfield__label" for="sample3">Username</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="email"/>
+            <label class="mdl-textfield__label" for="sample3">Email</label>
+          </div>
+        </form>
+      </div>
+      <div class="mdl-card__actions" style="padding:16px">
+        <div class="action-part" style="padding-bottom:25px">
+          <a href="#" id="recover-password-button" class="mdl-button snap-button snap-button--filled">
+            Recover Password
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-grid snap-grid">
+    <div class="mdl-layout__content snap-layout-content">
+      <a name="top"></a>
+      <div class="snap-banner-section mdl-typography--text-center">
+        <div class="snap-font snap-slogan">Snap!</div>
+        <div class="snap-font snap-sub-slogan mdl-typography--font-light">A blocks-based language for computer scientists.</div>
+        <a class="mdl-button snap-button snap-button--filled snap-try-button" href="http://snap.berkeley.edu/run">Try it now!</a>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    #snap-featured-card.mdl-card {
+      width: 210px !important;
+      height: 250px;
+      background: #eaeaea;
+    }
+    #snap-featured-card > .mdl-card__media {
+      background-color: #eaeaea;
+      width: 210px;
+      border: 0;
+      /*margin: 40px;*/
+    }
+    /*  #snap-featured-card > .mdl-card__title {
+        padding-top: 0;
+        text-align: center;
+        color: #3a3d3f;
+      }
+      #snap-featured-card > .mdl-card__title-text {
+        padding-bottom: 0 !important;
+        text-align: center;
+      }
+      #snap-featured-card > .mdl-card__supporting-text {
+        color: #838c8e;
+        padding-top: 5px;
+        padding-bottom: 20px;
+        font-size: 11px;
+        letter-spacing: 0.3px;
+        font-weight: 300;
+      }*/
+  </style>
+
+
+  <div class="mdl-grid snap-card-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+
+      <div class="snap-featured-section mdl-typography--text-center">
+        <div class="featured"></div>
+        <div class="mdl-typography--text-uppercase mdl-typography--font-medium snap-featured-title">Featured Projects</div>
+        <div class="snap-featured-projects">
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/funny face.png" width="100%">
+              </div>
+              <!--             <div class="mdl-card__title mdl-card--expand">
+                            <div class="mdl-card__title-text snap-featured-card-title-text">Funny Face</div>
+                          </div> -->
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Funny Face
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/jurassic park.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Jurassic Park
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/kanon.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Kanon
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/math trainer.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Math Trainer
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="snap-featured-card" class="mdl-card mdl-shadow--1dp">
+              <div class="mdl-card__media"><img src="images/splotches.png" width="100%">
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-title-text">
+                Splotches
+              </div>
+              <div class="mdl-card__supporting-text snap-featured-card-subtitle-text">
+                Author: username
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+
+<footer class="mdl-mega-footer snap-footer">
+  <div class="mdl-mega-footer__middle-section">
+    <div class="mdl-mega-footer__drop-down-section">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading">About</h1>
+      <ul class="mdl-mega-footer__link-list mdl-typography--font-light">
+        <li><a href="students.html">For Students</a></li>
+        <li><a href="teachers.html">For Teachers</a></li>
+        <li><a href="parents.html">For Parents</a></li>
+        <li><a href="extensions.html">Extensions</a></li>
+        <li><a href="credits.html">Credits</a></li>
+      </ul>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-section snap-drop-down">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading">Community</h1>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="guidelines.html">Guidelines</a></li>
+        <li><a href="forums.html">Forum</a></li>
+        <li><a href="wiki.html">Wiki</a></li>
+      </ul>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-section">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading">Support</h1>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="help.html">Help</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="mdl-mega-footer__drop-down-section">
+      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+      <h1 class="mdl-mega-footer__heading">Legal</h1>
+      <ul class="mdl-mega-footer__link-list">
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="dmca.html">DMCA</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mdl-mega-footer__bottom-section">
+    <div class="snap-copyright">SOME SORT OF COPYRIGHT THING © 2015</div>
+  </div>
+</footer>
+
+  <!-- not needed yet -->
   <div ng-view></div>
-
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
