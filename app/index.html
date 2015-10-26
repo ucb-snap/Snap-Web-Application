@@ -19,7 +19,7 @@
         rel="stylesheet">
   <link rel="stylesheet" href="css/material.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="manifest" href="./js/manifest.json">
+  <link rel="manifest" href="js/manifest.json">
   <link rel="stylesheet" type="text/css" href="slick-1.5.7/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="slick-1.5.7/slick/slick-theme.css"/>
 
@@ -43,15 +43,13 @@
   </style>
 </head>
 
-
 <!-- ng-app="myApp" defines the application scope -->
 <body ng-app="myApp" ng-controller="MainController">
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <h1> {{ Title }} </h1>
-
+  <h1> {{ title }} </h1>
 
   <div ng-view></div>
 
